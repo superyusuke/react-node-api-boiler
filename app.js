@@ -23,6 +23,22 @@ app.get('*', function (req, res) {
         'public', 'index.html'))
 })
 
+// APIs
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27017/testDbModel')
+const dbModel = require('./models/dbModel.js')
+
+//-----POST BOOKS----------
+app.post('/test', function (req, res) {
+  const body = req.body
+  dbModel.create(body, function (err, body) {
+    if (err) {
+      throw err
+    }
+    res.json(body)
+  })
+})
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
