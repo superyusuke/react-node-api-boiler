@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import FetchButton from '../components/FetchButton'
+import PostButton from '../components/PostButton'
 import buttonAction from '../actions/buttonAction';
 
 
@@ -16,5 +16,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const FetchButtonContainer = connect(mapStateToProps, mapDispatchToProps)(FetchButton)
-export default FetchButtonContainer
+const PostButtonContainer = connect(mapStateToProps, mapDispatchToProps)(PostButton)
+export default PostButtonContainer

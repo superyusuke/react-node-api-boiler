@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const postUsingFetch = () => {
+const post = () => {
   return (dispatch) => {
-    console.log('postUsingFetch')
+    console.log('Post')
     const url = '/test'
     const data = [{
       id: 1,
@@ -12,9 +12,12 @@ const postUsingFetch = () => {
     }]
 
     axios.post(url, data)
-      .then(response => console.log(response.data))
+      .then(response => {
+      console.log('post success')
+      console.log(response.data)
+      })
       .catch((error) => {console.log(error)})
   }
 }
 
-export default postUsingFetch
+export default post

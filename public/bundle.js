@@ -25633,37 +25633,7 @@ var withRouter = function withRouter(Component) {
 /* harmony default export */ __webpack_exports__["a"] = (withRouter);
 
 /***/ }),
-/* 118 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var FetchButton = function FetchButton(_ref) {
-  var post = _ref.post;
-
-  return _react2.default.createElement(
-    'button',
-    { onClick: function onClick() {
-        post();
-      } },
-    'This is fetch button.'
-  );
-};
-
-exports.default = FetchButton;
-
-/***/ }),
+/* 118 */,
 /* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25676,9 +25646,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(59);
 
-var _FetchButton = __webpack_require__(118);
+var _PostButton = __webpack_require__(148);
 
-var _FetchButton2 = _interopRequireDefault(_FetchButton);
+var _PostButton2 = _interopRequireDefault(_PostButton);
 
 var _buttonAction = __webpack_require__(120);
 
@@ -25698,8 +25668,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-var FetchButtonContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_FetchButton2.default);
-exports.default = FetchButtonContainer;
+var PostButtonContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_PostButton2.default);
+exports.default = PostButtonContainer;
 
 /***/ }),
 /* 120 */
@@ -25718,9 +25688,9 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var postUsingFetch = function postUsingFetch() {
+var post = function post() {
   return function (dispatch) {
-    console.log('postUsingFetch');
+    console.log('Post');
     var url = '/test';
     var data = [{
       id: 1,
@@ -25730,14 +25700,15 @@ var postUsingFetch = function postUsingFetch() {
     }];
 
     _axios2.default.post(url, data).then(function (response) {
-      return console.log(response.data);
+      console.log('post success');
+      console.log(response.data);
     }).catch(function (error) {
       console.log(error);
     });
   };
 };
 
-exports.default = postUsingFetch;
+exports.default = post;
 
 /***/ }),
 /* 121 */,
@@ -27308,6 +27279,37 @@ module.exports = function spread(callback) {
   };
 };
 
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PostButton = function PostButton(_ref) {
+  var post = _ref.post;
+
+  return _react2.default.createElement(
+    'button',
+    { onClick: function onClick() {
+        post();
+      } },
+    'This is fetch button.'
+  );
+};
+
+exports.default = PostButton;
 
 /***/ })
 /******/ ]);
