@@ -31,6 +31,7 @@ const dbModel = require('./models/dbModel.js')
 //-----POST BOOKS----------
 app.post('/test', function (req, res) {
   const body = req.body
+  console.log(body)
   dbModel.create(body, function (err, body) {
     if (err) {
       throw err

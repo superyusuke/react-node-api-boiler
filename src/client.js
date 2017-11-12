@@ -12,6 +12,7 @@ import thunk from 'redux-thunk'
 // Import Component
 import Test1 from './components/Test1'
 import Test2 from './components/Test2'
+import FetchButtonContainer from './containers/FetchButtonContainer'
 
 // IMPORT COMBINED REDUCERS
 import reducers from './reducers/index'
@@ -27,6 +28,7 @@ const Routes = (
   <Provider store={store}>
     <BrowserRouter>
       <div>
+        <FetchButtonContainer />
         <Switch>
           <Route exact path="/" component={Test1}/>
           <Route path="/" component={Test2}/>
